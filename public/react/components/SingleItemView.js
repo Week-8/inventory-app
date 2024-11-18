@@ -36,12 +36,14 @@ const sampleData = [
 
 export async function singleItemLoader({ params }) {
   const { itemId } = params;
-  // const res = await fetch(`/items/search/${itemId}`);
-  // const item = await res.json();
 
-  const item = sampleData[itemId - 1];
-
-  return { item };
+  try {
+    const res = await fetch(`http://localhost:3000/api/items/${itemId}`);
+    const item = await res.json();
+    return { item };
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export default function SingleItemView() {

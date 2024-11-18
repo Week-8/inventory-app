@@ -40,8 +40,9 @@ const sampleData = [
 ];
 
 export async function loader() {
-  // const items = await fetchItems();
-  const items = sampleData;
+  const res = await fetch("http://localhost:3000/api/items");
+  const items = await res.json();
+  // const items = sampleData;
   return { items };
 }
 
