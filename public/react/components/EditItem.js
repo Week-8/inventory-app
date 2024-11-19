@@ -18,13 +18,20 @@ export default function EditItem({ item, onCancel }) {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Edit Item</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4 border-2 p-4 rounded-md"
+      >
+        <h2 className="text-3xl font-bold mb-4">Edit Item</h2>
         <div>
-          <label htmlFor="name" className="block mb-1">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Name
           </label>
           <input
+            className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-800	 rounded-md focus:ring-2 outline-none py-2 px-1"
             type="text"
             id="name"
             name="name"
@@ -34,10 +41,14 @@ export default function EditItem({ item, onCancel }) {
           />
         </div>
         <div>
-          <label htmlFor="description" className="block mb-1">
+          <label
+            htmlFor="description"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Description
           </label>
           <textarea
+            className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-800	 rounded-md focus:ring-2 outline-none py-2 px-1"
             id="description"
             name="description"
             value={editedItem.description}
@@ -46,10 +57,14 @@ export default function EditItem({ item, onCancel }) {
           />
         </div>
         <div>
-          <label htmlFor="price" className="block mb-1">
+          <label
+            htmlFor="price"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Price
           </label>
           <input
+            className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-800	 rounded-md focus:ring-2 outline-none py-2 px-1"
             type="number"
             id="price"
             name="price"
@@ -61,10 +76,14 @@ export default function EditItem({ item, onCancel }) {
           />
         </div>
         <div>
-          <label htmlFor="category" className="block mb-1">
+          <label
+            htmlFor="category"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Category
           </label>
           <input
+            className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-800	 rounded-md focus:ring-2 outline-none py-2 px-1"
             type="text"
             id="category"
             name="category"
@@ -74,10 +93,14 @@ export default function EditItem({ item, onCancel }) {
           />
         </div>
         <div>
-          <label htmlFor="image" className="block mb-1">
+          <label
+            htmlFor="image"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Image URL
           </label>
           <input
+            className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-800	 rounded-md focus:ring-2 outline-none py-2 px-1"
             type="url"
             id="image"
             name="image"

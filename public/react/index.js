@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     // action: appAction,
   },
   {
-    path: "items/search/:itemId",
+    path: "items/:itemId",
     element: <SingleItemView />,
     loader: singleItemLoader,
   },
