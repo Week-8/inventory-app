@@ -8,6 +8,8 @@ import GridItemView from "./GridItemView";
 
 import { Outlet, Link, useLoaderData } from "react-router-dom";
 
+
+
 const sampleData = [
   {
     id: 1,
