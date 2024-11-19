@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 import GridItemView from "./GridItemView";
 
 import { Outlet, Link, useLoaderData } from "react-router-dom";
+import { IoSearch } from "react-icons/io5";
 
 const sampleData = [
   {
@@ -49,6 +50,7 @@ export async function loader() {
 function App() {
   const { items } = useLoaderData();
   // const [items, setItems] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const fetchItems = async () => {
     const res = await fetch("http://localhost:3000/items");
@@ -61,6 +63,19 @@ function App() {
   return (
     <div className="w-screen px-12 pt-4">
       <NavBar option={"home"} />
+      <div className="relative my-6 rounded-lg overflow-visible">
+        <IoSearch
+          size={25}
+          className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+        />
+        <input
+          type="text"
+          placeholder="Search items or categories..."
+          className="pl-10 w-full focus:outline-none focus:ring p-2 rounded-lg focus:ring-offset-2 border-2 focus:ring-2 focus:ring-black"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       {/* Render the items */}
       <GridItemView items={items} />
     </div>

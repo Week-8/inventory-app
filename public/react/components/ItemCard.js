@@ -14,7 +14,7 @@ export default function ItemCard({ item }) {
           alt={item.name}
           className="w-full h-48 object-contain"
         />
-        <div className="w-full bg-inherit border-t-2 border-black pt-2">
+        <div className="w-full bg-inherit border-t-2 border-black pt-2 flex flex-col gap-2">
           <h3 className="font-bold txt-xl">{item.name}</h3>
           <p className="text-gray-600">{item.category}</p>
           <p className="font-semibold text-blue-800">
