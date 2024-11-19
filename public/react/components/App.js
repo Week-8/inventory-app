@@ -4,24 +4,21 @@ import { useLoaderData } from "react-router-dom";
 import NavBar from "./NavBar";
 import GridItemView from "./GridItemView";
 
-import { Outlet, Link, useLoaderData } from "react-router-dom";
-
-
 export async function loader() {
-  // const items = await fetchItems();
-  const items = sampleData;
+  const res = await fetch("http://localhost:3000/api/items");
+  const items = await res.json();
   return { items };
 }
 
 function App() {
   const { items } = useLoaderData();
-  // const [items, setItems] = useState([]);
+  const [allItems, setAllItems] = useState(items); // Initialize state for items
 
   // Fetches items from the backend (for adding and deleting)
   const fetchItems = async () => {
     const res = await fetch("http://localhost:3000/api/items");
     const fetchedItems = await res.json();
-    setAllItems(fetchedItems);
+    setAllItems(fetchedItems); // Update the state with fetched items
   };
 
   // Add Item (POST)
@@ -70,7 +67,7 @@ function App() {
     <div className="w-screen px-12 pt-4">
       <NavBar option={"home"} />
       {/* Render the items */}
-      <GridItemView items={items} />
+      <GridItemView items={allItems} />
     </div>
   );
 }
