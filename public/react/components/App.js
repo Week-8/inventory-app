@@ -56,9 +56,7 @@ function App() {
     const res = await fetch("http://localhost:3000/items");
   };
 
-  useEffect(() => {
-    // Fetch the items
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="w-screen px-12 pt-4">
