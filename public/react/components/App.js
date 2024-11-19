@@ -4,10 +4,9 @@ import { useLoaderData } from "react-router-dom";
 import NavBar from "./NavBar";
 import GridItemView from "./GridItemView";
 
-import { Outlet, Link, useLoaderData } from "react-router-dom";
+
 
 export async function loader() {
-  // const items = await fetchItems();
   const res = await fetch("http://localhost:3000/api/items");
   const items = await res.json();
   return { items };
@@ -15,12 +14,12 @@ export async function loader() {
 
 function App() {
   const { items } = useLoaderData();
-  const [allItems, setAllItems] = useState(items);
+  const [allItems, setAllItems] = useState(items); // Initialize state for items
 
   const fetchItems = async () => {
     const res = await fetch("http://localhost:3000/api/items");
     const fetchedItems = await res.json();
-    setAllItems(fetchedItems);
+    setAllItems(fetchedItems); // Update the state with fetched items
   };
 
   // Add Item (POST)
