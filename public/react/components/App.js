@@ -4,6 +4,8 @@ import { useLoaderData } from "react-router-dom";
 import NavBar from "./NavBar";
 import GridItemView from "./GridItemView";
 
+
+
 export async function loader() {
   const res = await fetch("http://localhost:3000/api/items");
   const items = await res.json();
@@ -14,7 +16,6 @@ function App() {
   const { items } = useLoaderData();
   const [allItems, setAllItems] = useState(items); // Initialize state for items
 
-  // Fetches items from the backend (for adding and deleting)
   const fetchItems = async () => {
     const res = await fetch("http://localhost:3000/api/items");
     const fetchedItems = await res.json();
@@ -31,7 +32,7 @@ function App() {
       body: JSON.stringify(newItem),
     });
     if (res.ok) {
-      fetchItems(); // This refetches the items after a new one has been added
+      fetchItems();
     }
   };
 
@@ -45,7 +46,7 @@ function App() {
       body: JSON.stringify(updatedItem),
     });
     if (res.ok) {
-      fetchItems(); // Re-fetch items after updating
+      fetchItems();
     }
   };
 
@@ -55,12 +56,12 @@ function App() {
       method: "DELETE",
     });
     if (res.ok) {
-      fetchItems(); // Re-fetch items after deletion
+      fetchItems();
     }
   };
 
   useEffect(() => {
-    fetchItems(); // Fetch items when the component loads
+    // fetchItems();
   }, []);
 
   return (
