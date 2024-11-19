@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "./NavBar";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function AddItem() {
   const [item, setItem] = useState({
     name: "",
@@ -11,11 +11,24 @@ export default function AddItem() {
     image: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setItem({ ...item, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {};
+  // Add Item (POST)
+  const addItem = async (e) => {
+    e.preventDefault();
+    const res = await fetch("http://localhost:3000/api/items", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
+    });
+    navigate("/");
+  };
 
   return (
     <div className="px-8 py-2">
@@ -29,10 +42,7 @@ export default function AddItem() {
           Inventory
         </Link>
       </div>
-      <form
-        onSubmit={handleSubmit}
-        className="space-y-4 border-2 p-4 rounded-md"
-      >
+      <form onSubmit={addItem} className="space-y-4 border-2 p-4 rounded-md">
         <h2 className="text-3xl font-bold mb-4">Add New Item</h2>
         <div>
           <label

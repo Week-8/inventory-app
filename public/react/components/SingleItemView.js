@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import EditItem from "./EditItem";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import { FaArrowLeft, FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
@@ -49,9 +49,18 @@ export async function singleItemLoader({ params }) {
 }
 export default function SingleItemView() {
   const { item } = useLoaderData();
+  const navigate = useNavigate();
+
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleDelete = () => {};
+  const deleteItem = async (id) => {
+    const res = await fetch(`http://localhost:3000/api/items/${id}`, {
+      method: "DELETE",
+    });
+    if (res.ok) {
+      navigate("/");
+    }
+  };
 
   return (
     <div className="flex flex-col w-full p-4">
@@ -99,7 +108,7 @@ export default function SingleItemView() {
               <button
                 className="focus:outline-none text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-red-600 hover:bg-red-700 flex justify-between w-28 txt-2xl items-center"
                 variant="destructive"
-                onClick={handleDelete}
+                onClick={() => deleteItem(item.id)}
               >
                 <MdDeleteForever size={20} />
                 Delete

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function EditItem({ item, onCancel }) {
   const [editedItem, setEditedItem] = useState({
@@ -9,19 +10,30 @@ export default function EditItem({ item, onCancel }) {
     image: item.image,
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setEditedItem({ ...editedItem, [e.target.name]: e.target.value });
   };
-  const handleSubmit = (e) => {
+
+  // Update Item (PATCH)
+  const updateItem = async (e) => {
     e.preventDefault();
+    const res = await fetch(`http://localhost:3000/api/items/${item.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedItem),
+    });
+    if (res.ok) {
+      navigate("/");
+    }
   };
 
   return (
     <div>
-      <form
-        onSubmit={handleSubmit}
-        className="space-y-4 border-2 p-4 rounded-md"
-      >
+      <form onSubmit={updateItem} className="space-y-4 border-2 p-4 rounded-md">
         <h2 className="text-3xl font-bold mb-4">Edit Item</h2>
         <div>
           <label
