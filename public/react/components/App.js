@@ -20,9 +20,11 @@ function App() {
   return (
     <div className="w-screen">
       <Title buttonTitle="Home" buttonLink="/" titleName="Inventory" />
-      <NavBar option={"home"} />
-      {/* Render the items */}
-      <GridItemView items={allItems} />
+      <div className="px-4">
+        <NavBar option={"home"} />
+        {/* Render the items */}
+        <GridItemView items={allItems} />
+      </div>
     </div>
   );
 }
