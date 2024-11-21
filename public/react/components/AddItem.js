@@ -36,7 +36,7 @@ export default function AddItem() {
         <NavBar />
         <Link
           to={"/inventory"}
-          className="inline-flex items-center mb-6 font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors px-4 py-2 min-w-[100px]"
+          className="inline-flex items-center mb-6 font-semibold bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C]  rounded-lg transition-colors px-4 py-2 min-w-[100px]"
         >
           <FaArrowLeft className="mr-2 h-4 w-4 font-semibold" /> Back to
           Inventory
@@ -55,7 +55,7 @@ export default function AddItem() {
             Name
           </label>
           <input
-            className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-800	 rounded-md focus:ring-2 outline-none py-2 px-1"
+            className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-80  rounded-md focus:ring-2 outline-none py-2 px-1"
             autoComplete="off"
             type="text"
             id="name"
@@ -136,7 +136,7 @@ export default function AddItem() {
         </div>
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md"
+          className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C]  font-semibold py-2 px-4 rounded-md"
         >
           Add Item
         </button>

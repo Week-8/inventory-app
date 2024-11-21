@@ -47,8 +47,8 @@ export default function RegisterPage() {
   return (
     <div className="flex flex-col items-center w-screen mx-auto px-4 py-8">
       <Link
-        to={"/"}
-        className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6 w-1/3"
+        to={"/inventory"}
+        className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-25 gap-4 ml-6 mr-auto mt-5 py-2 px-6 transition-colors items-center"
       >
         <FaArrowLeft className="mr-2 h-4 w-4" /> Back to Inventory
       </Link>

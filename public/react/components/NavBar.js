@@ -20,7 +20,7 @@ export default function NavBar({ option }) {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
-    navigate("/login");
+    navigate("/auth/login");
   };
 
   return (
@@ -36,7 +36,7 @@ export default function NavBar({ option }) {
             <span className="">Add New Item</span>
           </Link>
           <Link
-            to={"/items/cart"}
+            to={"/cart"}
             className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-30 ml-auto mr-6 mt-5 py-2 px-6 transition-colors items-center"
           >
             <IoCartOutline size={25} />
@@ -44,18 +44,18 @@ export default function NavBar({ option }) {
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
-              className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-28 gap-4 ml-auto mr-6 mt-5 py-2 px-6 transition-colors items-center"
+              className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-25 gap-4 ml-auto mr-6 mt-5 py-2 px-6 transition-colors items-center"
             >
               <CiLogin size={25} />
-              <span>Logout</span>
+              <span>Log Out</span>
             </button>
           ) : (
             <Link
               to={"/auth/login"}
-              className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-35 ml-auto mr-6 mt-5 py-2 px-6 transition-colors items-center"
+              className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-25 gap-4 ml-auto mr-6 mt-5 py-2 px-6 transition-colors items-center"
             >
               <CiLogin size={20} />
-              <span>Login</span>
+              <span>Log In</span>
             </Link>
           )}
         </div>

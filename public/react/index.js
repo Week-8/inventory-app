@@ -15,6 +15,7 @@ import GridItemView from "./components/GridItemView";
 import RegisterPage from "./components/Register";
 import LoginPage from "./components/LoginPage";
 import Home from "./components/Home";
+import Cart from "./components/Cart";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
     // action: appAction,
   },
   {
+    path: "/cart",
+    element: <Cart />,
+    errorElement: <ErrorPage />,
+    // action: appAction,
+  },
+  {
     path: "items/:itemId",
     element: <SingleItemView />,
     loader: singleItemLoader,
@@ -50,6 +57,7 @@ const router = createBrowserRouter([
     path: "/auth/login",
     element: <LoginPage />,
   },
+  
 ]);
 
 root.render(

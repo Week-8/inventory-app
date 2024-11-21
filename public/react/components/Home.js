@@ -12,7 +12,7 @@ const styles = {
 
   mainHeading: {
     display: "flex",
-    position: "absolute",
+    position: "relative",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
@@ -32,7 +32,7 @@ const styles = {
   },
 
   titleImg: {
-    position: "relative",
+    position: "absolute",
     width: "100%",
     height: "100%",
     objectFit: "cover",
@@ -43,10 +43,10 @@ const styles = {
 
   intro: {
     display: "flex",
+    position: 'relative',
     flexDirection: "column",
     alignitems: "center",
-    position: "relative",
-    bottom: "800px",
+    marginTop: "2.5%",
     padding: "10px",
     width: "100%",
     backgroundColor: "rgba(0,0,0,0)",
@@ -55,12 +55,10 @@ const styles = {
 
   shopImage: {
     left: "0%",
-    top: "",
     width: "100%",
     objectFit: "cover",
-    position: "relative",
+    position: "absolute",
     zIndex: "0",
-    borderBottom: "10px solid #2c2c2c",
     borderTop: "10px solid #2c2c2c",
   },
 
@@ -68,10 +66,11 @@ const styles = {
 
   introTitle: {
     display: "flex",
+    position:'relative',
     justifyContent: "center",
     margin: "0 auto",
-    marginTop: "-25vh",
-    marginBottom: "2vh",
+    marginTop: "0vh",
+    marginBottom: "0",
     border: "0.4vw solid #87CEEB",
     borderRadius: "2vw",
     padding: "1vh 1vw",
@@ -87,9 +86,10 @@ const styles = {
   introHeaderssize2: {
     display: "flex",
     justifyContent: "center",
+    position: 'relative',
     margin: "0 auto",
-    marginTop: "2vh",
-    marginBottom: "2vh",
+    marginTop: "3%",
+    marginBottom: "0vh",
     border: "0.4vw solid #d4a53f",
     borderRadius: "2vw",
     padding: "1vh 1vw", // Adjusted padding for proportional scaling
@@ -103,10 +103,11 @@ const styles = {
 
   introHeaderssize3: {
     display: "flex",
+    position: 'relative',
     justifyContent: "center",
     margin: "0 auto",
-    marginTop: "1.5vh",
-    marginBottom: "2vh",
+    marginTop: "1.5%",
+    marginBottom: "0vh",
     border: "0.4vw solid #d4a53f",
     borderRadius: "2vw",
     padding: "1vh 1vw", // Adjusted padding
@@ -120,10 +121,11 @@ const styles = {
 
   introHeaderssize4: {
     display: "flex",
+    position: 'relative',
     justifyContent: "center",
     margin: "0 auto",
-    marginTop: "1vh",
-    marginBottom: "2vh",
+    marginTop: "3%",
+    marginBottom: "0vh",
     border: "0.4vw solid #f0423c",
     borderRadius: "2vw",
     padding: "1vh 1vw", // Adjusted padding
@@ -137,10 +139,11 @@ const styles = {
 
   introParagraph: {
     display: "flex",
+    position: 'relative',
     justifyContent: "center",
     margin: "0 auto",
-    marginTop: "2vh",
-    marginBottom: "2vh",
+    marginTop: "1.5%",
+    marginBottom: "0vh",
     border: "0.4vw solid #87CEEB",
     borderRadius: "2vw",
     padding: "1vh 1vw", // Adjusted padding
@@ -154,10 +157,11 @@ const styles = {
 
   otherIntroParagraphs: {
     display: "flex",
+    position: 'relative',
     justifyContent: "center",
     margin: "0 auto",
-    marginTop: "2vh",
-    marginBottom: "2vh",
+    marginTop: "1.5%",
+    marginBottom: "0vh",
     border: "0.5vw solid #d4a53f",
     borderRadius: "2vw",
     padding: "1vh 1vw", // Adjusted padding
@@ -168,6 +172,34 @@ const styles = {
     color: "white",
     width: "40vw",
   },
+
+  footer: {
+    display: 'flex',
+    marginBottom:'',
+    marginTop:'0%',
+    width:'100%',
+    borderTop: "10px solid #2c2c2c",
+    backgroundColor: '#4A6FA5',
+    flexDirection: 'column',
+
+  },
+
+  footText: {
+    fontWeight: 'bold',
+    color: 'white',
+    width:'90%',
+    marginBottom:'-1.2%',
+  },
+
+  footText1: {
+    fontWeight: 'bold',
+    color: 'white',
+    width:'50%',
+    display: 'block',
+    marginLeft: '1%',
+    marginBottom:'0.5%',
+  }
+  
 };
 
 const Home = () => {
@@ -203,22 +235,32 @@ const Home = () => {
             On the front-end our website provides an easy to navigate, elegant
             interface for users to create, read, update and delete data. This is
             through a default display of all items in the shops inventory and
-            then, using REACT, a user can click one of the many buttons fetching
+            then, using REACT, a user can click one of the many buttons to fetch
             the appropriate Express function from the backend.
           </p>
           <h3 style={styles.introHeaderssize3}>Back-End</h3>
           <p style={styles.otherIntroParagraphs}>
             In the back-end there is a database which is full of different
             products and contains their name, description, price, category,
-            image URL and a ID (not visible on the front-end). Once the
-            appropriate Express funtions have been fetched and executed the
+            image URL and an ID (not visible on the front-end). Once the
+            appropriate Express functions have been fetched and executed the
             database will be updated and as a result the front end display will
-            adapt leading to a smooth, hassle-free experience for employees.
+            adapt leading to a smooth, hassle-free experience for the employees.
           </p>
           <h3 style={styles.introHeaderssize4}>
             To view the site click the 'Inventory' button in the top left!
           </h3>
         </div>
+        <footer style={styles.footer}>
+              <p style={styles.footText}>This website was developed by Muhammad Hussain and James Gambrill as part of their software engineering Multiverse course.</p>
+              <p style={styles.footText1}><br/>This includes: <ul>
+                <li>🖥️ The Interface (and all it's elements)</li>
+                <li>🌐 The Express routes (POST, GET, PUT and DELETE)</li>
+                <li>📦 The Sequelize Model</li>
+                <li>🔄 The Fetch Requests</li>
+                <li>💾 The SQLite database</li>
+                </ul></p> 
+        </footer>
       </div>
     </div>
   );
