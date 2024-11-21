@@ -20,7 +20,6 @@ export default function LoginPage() {
     setIsLoading(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
       const res = await fetch("http://localhost:3000/api/auth/login", {
         method: "POST",
         headers: {
@@ -31,8 +30,7 @@ export default function LoginPage() {
       const data = await res.json();
       if (res.status === 200) {
         localStorage.setItem("user", JSON.stringify(data));
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        navigate("/");
+        navigate("/inventory");
       }
     } catch (error) {
     } finally {

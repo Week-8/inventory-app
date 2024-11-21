@@ -7,7 +7,7 @@ export default function ItemCard({ item }) {
       <Link
         to={`/items/${item.id}`}
         key={item.id}
-        className="border p-4 rounded-lg hover:shadow-lg transition-shadow flex flex-col gap-4"
+        className="border p-4 rounded-lg hover:shadow-lg transition-shadow flex flex-col gap-4 bg-[#FFFFFF]"
       >
         <img
           src={item.image}

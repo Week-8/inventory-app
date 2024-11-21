@@ -25,30 +25,26 @@ export default function NavBar({ option }) {
 
   return (
     <div className="flex w-full justify-between items-center">
-      <Link to={"/"}>
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Inventory App
-        </h1>
-      </Link>
+      <Link to={"/"}></Link>
       {option === "home" && (
-        <div className="flex gap-4">
+        <div className="flex">
           <Link
             to={"/items/add"}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg flex w-44 transition-colors items-center justify-between py-2 px-4"
+            className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-44 ml-auto mr-6 mt-5 py-2 px-6 transition-colors items-center"
           >
             <LuPlus />
-            <span>Add New Item</span>
+            <span className="">Add New Item</span>
           </Link>
           <Link
             to={"/items/cart"}
-            className="border-2 font-semibold rounded-lg flex w-30 gap-2 transition-colors items-center py-2 px-4"
+            className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-30 ml-auto mr-6 mt-5 py-2 px-6 transition-colors items-center"
           >
             <IoCartOutline size={25} />
           </Link>
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
-              className="border-2 font-semibold rounded-lg flex w-30 gap-2 transition-colors items-center py-2 px-4"
+              className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-28 gap-4 ml-auto mr-6 mt-5 py-2 px-6 transition-colors items-center"
             >
               <CiLogin size={25} />
               <span>Logout</span>

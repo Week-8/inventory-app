@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 import NavBar from "./NavBar";
 import GridItemView from "./GridItemView";
+import Title from "./Title";
 
 export async function loader() {
   const res = await fetch("http://localhost:3000/api/items");
@@ -17,7 +18,8 @@ function App() {
   useEffect(() => {}, []);
 
   return (
-    <div className="w-screen px-12 pt-4">
+    <div className="w-screen">
+      <Title buttonTitle="Home" buttonLink="/" titleName="Inventory" />
       <NavBar option={"home"} />
       {/* Render the items */}
       <GridItemView items={allItems} />

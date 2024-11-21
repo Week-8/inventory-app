@@ -32,17 +32,20 @@ export default function AddItem() {
 
   return (
     <div className="px-8 py-2">
-      <div className="flex justify-center w-full flex-col gap-4">
+      <div className="justify-center w-60 flex-col gap-4">
         <NavBar />
         <Link
-          to={"/"}
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6 font-semibold"
+          to={"/inventory"}
+          className="inline-flex items-center mb-6 font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors px-4 py-2 min-w-[100px]"
         >
           <FaArrowLeft className="mr-2 h-4 w-4 font-semibold" /> Back to
           Inventory
         </Link>
       </div>
-      <form onSubmit={addItem} className="space-y-4 border-2 p-4 rounded-md">
+      <form
+        onSubmit={addItem}
+        className="space-y-4 border-2 p-4 bg-white rounded-md"
+      >
         <h2 className="text-3xl font-bold mb-4">Add New Item</h2>
         <div>
           <label
