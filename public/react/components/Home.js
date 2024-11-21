@@ -216,8 +216,7 @@ const Home = () => {
             adapt leading to a smooth, hassle-free experience for employees.
           </p>
           <h3 style={styles.introHeaderssize4}>
-            To view the site click the 'Inventory' button in the top left.
-            <br /> To learn more keep scrolling!
+            To view the site click the 'Inventory' button in the top left!
           </h3>
         </div>
       </div>

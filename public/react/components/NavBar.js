@@ -52,7 +52,7 @@ export default function NavBar({ option }) {
           ) : (
             <Link
               to={"/auth/login"}
-              className="border-2 font-semibold rounded-lg flex w-30 gap-2 transition-colors items-center py-2 px-4"
+              className="bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] font-semibold rounded-lg flex w-35 ml-auto mr-6 mt-5 py-2 px-6 transition-colors items-center"
             >
               <CiLogin size={20} />
               <span>Login</span>
