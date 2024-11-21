@@ -14,6 +14,7 @@ import AddItem from "./components/AddItem";
 import GridItemView from "./components/GridItemView";
 import RegisterPage from "./components/Register";
 import LoginPage from "./components/LoginPage";
+import Home from "./components/Home";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -21,6 +22,12 @@ const root = createRoot(container);
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Home />,
+    errorElement: <ErrorPage />,
+    // action: appAction,
+  },
+  {
+    path: "/inventory",
     element: <App />,
     errorElement: <ErrorPage />,
     loader: appLoader,

@@ -26,7 +26,6 @@ export default function RegisterPage() {
     }
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
       const res = await fetch("http://localhost:3000/api/auth/register", {
         method: "POST",
         headers: {
@@ -37,8 +36,7 @@ export default function RegisterPage() {
       const data = await res.json();
       if (res.status === 200) {
         localStorage.setItem("user", JSON.stringify(data.user));
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        navigate("/");
+        navigate("/inventory");
       }
     } catch (error) {
     } finally {

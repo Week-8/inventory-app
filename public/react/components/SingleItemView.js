@@ -5,37 +5,6 @@ import NavBar from "./NavBar";
 import { FaArrowLeft, FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 
-const sampleData = [
-  {
-    id: 1,
-    name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    category: "men's clothing",
-    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-  },
-  {
-    id: 2,
-    name: "Mens Casual Premium Slim Fit T-Shirts ",
-    price: 22.3,
-    description:
-      "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-    category: "men's clothing",
-    image:
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-  },
-  {
-    id: 3,
-    name: "Mens Cotton Jacket",
-    price: 55.99,
-    description:
-      "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-    category: "men's clothing",
-    image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-  },
-];
-
 export async function singleItemLoader({ params }) {
   const { itemId } = params;
 
@@ -64,11 +33,11 @@ export default function SingleItemView() {
 
   return (
     <div className="flex flex-col w-full p-4">
-      <div className="flex justify-center w-full flex-col gap-4">
+      <div className="justify-center w-full flex-col gap-4">
         <NavBar />
         <Link
-          to={"/"}
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6 font-semibold"
+          to={"/inventory"}
+          className="inline-flex items-center mb-6 font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors px-4 py-2 min-w-[100px]"
         >
           <FaArrowLeft className="mr-2 h-4 w-4 font-semibold" /> Back to
           Inventory
@@ -76,14 +45,14 @@ export default function SingleItemView() {
       </div>
       {!isEditing ? (
         <div className="border-2 rounded-md w-[40rem] font-semibold">
-          <div className="w-full justify-center flex">
+          <div className="w-full justify-center flex bg-white">
             <img
               src={item.image}
               alt={item.name}
               className="w-full max-w-md h-64 object-contain mb-4"
             />
           </div>
-          <div className="border-t-2 p-4">
+          <div className="border-t-2 p-4 bg-white">
             <h2 className="text-2xl font-bold mb-4">{item.name}</h2>
             <p className="mb-4 text-gray-600">
               <span className="font-bold text-gray-700 txt-4xl">Category:</span>{" "}

@@ -33,7 +33,10 @@ export default function EditItem({ item, onCancel }) {
 
   return (
     <div>
-      <form onSubmit={updateItem} className="space-y-4 border-2 p-4 rounded-md">
+      <form
+        onSubmit={updateItem}
+        className="space-y-4 border-2 p-4 rounded-md bg-white"
+      >
         <h2 className="text-3xl font-bold mb-4">Edit Item</h2>
         <div>
           <label
