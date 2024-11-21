@@ -127,12 +127,12 @@ export default function EditItem({ item, onCancel }) {
         <div className="space-x-2">
           <button
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            className=" bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none dark:focus:ring-blue-800"
           >
             Update Item
           </button>
           <button
-            className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            className=" bg-[#eb3b2f] hover:bg-[#b32f25] text-[#2C2C2C] py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none rounded-lg focus:z-10 focus:ring-4 dark:focus:ring-gray-700 dark:bg-gr"
             type="button"
             variant="outline"
             onClick={onCancel}

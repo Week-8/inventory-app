@@ -37,7 +37,7 @@ export default function SingleItemView() {
         <NavBar />
         <Link
           to={"/inventory"}
-          className="inline-flex items-center mb-6 font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors px-4 py-2 min-w-[100px]"
+          className="inline-flex items-center mb-6 font-semibold bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] rounded-lg transition-colors px-4 py-2 min-w-[100px]"
         >
           <FaArrowLeft className="mr-2 h-4 w-4 font-semibold" /> Back to
           Inventory
@@ -68,14 +68,14 @@ export default function SingleItemView() {
             <div className="space-x-2 flex mt-8">
               <button
                 type="button"
-                className="focus:outline-none text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-blue-600 hover:bg-blue-700 flex justify-between w-24 txt-2xl items-center"
+                className="focus:outline-none focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-[#729FCF] hover:bg-[#5a7fb7] text-[#2C2C2C] flex justify-between w-24 txt-2xl items-center"
                 onClick={() => setIsEditing(true)}
               >
                 <FaEdit size={15} />
                 Edit
               </button>
               <button
-                className="focus:outline-none text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-red-600 hover:bg-red-700 flex justify-between w-28 txt-2xl items-center"
+                className="focus:outline-none focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-[#eb3b2f] hover:bg-[#b32f25] text-[#2C2C2C] flex justify-between w-28 txt-2xl items-center"
                 variant="destructive"
                 onClick={() => deleteItem(item.id)}
               >
