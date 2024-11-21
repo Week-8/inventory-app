@@ -27,7 +27,7 @@ export default function AddItem() {
       },
       body: JSON.stringify(item),
     });
-    navigate("/");
+    navigate("/inventory");
   };
 
   return (

@@ -27,7 +27,7 @@ export default function SingleItemView() {
       method: "DELETE",
     });
     if (res.ok) {
-      navigate("/");
+      navigate("/inventory");
     }
   };
 

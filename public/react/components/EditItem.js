@@ -27,7 +27,7 @@ export default function EditItem({ item, onCancel }) {
       body: JSON.stringify(editedItem),
     });
     if (res.ok) {
-      navigate("/");
+      navigate("/inventory");
     }
   };
 

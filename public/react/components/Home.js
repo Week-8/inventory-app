@@ -176,9 +176,10 @@ const styles = {
 
   footer: {
     display: 'flex',
-    marginBottom:'',
+    position: 'relative',
+    marginBottom:'0%',
     marginTop:'0%',
-    width:'100%',
+    width:'100vw',
     borderTop: "10px solid #2c2c2c",
     backgroundColor: '#4A6FA5',
     flexDirection: 'column',
@@ -187,23 +188,26 @@ const styles = {
 
   footText: {
     fontWeight: 'bold',
+    position: 'relative',
     color: 'white',
-    width:'90%',
+    width:'90vw',
     marginBottom:'-1.2%',
   },
 
   footText1: {
     fontWeight: 'bold',
+    position: 'relative',
     color: 'white',
-    width:'50%',
+    width:'50vw',
     display: 'block',
     marginLeft: '1%',
-    marginBottom:'0.5%',
+    marginBottom:'0%',
   },
 
   multiverse: {
     position: "relative",
     left: "96.1%",
+    top:'%',
     width: "3%",
     height:'3%',
     fontSize: "1rem",

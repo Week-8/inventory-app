@@ -44,7 +44,7 @@ const Cart = () => {
         </div>
             <div style={styles.div1}>
             
-             <p style={styles.paragraph}>🧰  This area is still in development.  🧰 <br/> Come back later!</p>
+             <p style={styles.paragraph}>⚠️  This area is still in development.  ⚠️ <br/> Come back later!</p>
             </div>   
         </div>
     )
