@@ -2,6 +2,7 @@ import React from "react";
 import Title from "./Title";
 import OnlineShop from "../../../Images/code1.jpg";
 import Shopping from "../../../Images/shopping.jpg";
+import Multiverse from '../../../Images/multiverse.jpg';
 
 const styles = {
   container: {
@@ -198,6 +199,18 @@ const styles = {
     display: 'block',
     marginLeft: '1%',
     marginBottom:'0.5%',
+  },
+
+  multiverse: {
+    position: "relative",
+    left: "96.1%",
+    width: "3%",
+    height:'3%',
+    fontSize: "1rem",
+    color: "white",
+    cursor: "pointer",
+    textDecoration: "none",
+    
   }
   
 };
@@ -260,6 +273,13 @@ const Home = () => {
                 <li>🔄 The Fetch Requests</li>
                 <li>💾 The SQLite database</li>
                 </ul></p> 
+          <input
+            type="image"
+            src={Multiverse}
+            alt="Multiverse Link"
+            style={styles.multiverse}
+            onClick={() => (window.location.href = 'https://www.multiverse.io/en-GB')}
+          />
         </footer>
       </div>
     </div>
