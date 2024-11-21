@@ -12,6 +12,8 @@ import ErrorPage from "./components/ErrorPage";
 import SingleItemView, { singleItemLoader } from "./components/SingleItemView";
 import AddItem from "./components/AddItem";
 import GridItemView from "./components/GridItemView";
+import RegisterPage from "./components/Register";
+import LoginPage from "./components/LoginPage";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
   {
     path: "/items/add",
     element: <AddItem />,
+  },
+  {
+    path: "/auth/register",
+    element: <RegisterPage />,
+  },
+  {
+    path: "/auth/login",
+    element: <LoginPage />,
   },
 ]);
 
