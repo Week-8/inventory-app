@@ -65,6 +65,9 @@ export default function SingleItemView() {
             <p className="mb-2 text-2xl font-bold text-blue-600">
               ${item.price.toFixed(2)}
             </p>
+            <p className="font-semibold text-gray-600">
+              Stock:{item.stock}
+            </p>
             <div className="space-x-2 flex mt-8">
               <button
                 type="button"

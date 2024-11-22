@@ -7,6 +7,7 @@ export default function EditItem({ item, onCancel }) {
     description: item.description,
     price: item.price,
     category: item.category,
+    stock: item.stock,
     image: item.image,
   });
 
@@ -105,6 +106,23 @@ export default function EditItem({ item, onCancel }) {
             value={editedItem.category}
             onChange={handleChange}
             required
+          />
+        </div>
+        <div>
+          <label
+             htmlFor="stock"
+             className="block text-sm font-medium text-gray-700 mb-1"
+           >
+             Stock
+           </label>
+            <input
+              className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-800	 rounded-md focus:ring-2 outline-none py-2 px-1"
+              type="number"
+             id="stock"
+             name="stock"
+             value={editedItem.stock}
+             onChange={handleChange}
+             required
           />
         </div>
         <div>

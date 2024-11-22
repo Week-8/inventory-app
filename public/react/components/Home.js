@@ -262,7 +262,7 @@ const Home = () => {
             image URL and an ID (not visible on the front-end). Once the
             appropriate Express functions have been fetched and executed the
             database will be updated and as a result the front end display will
-            adapt leading to a smooth, hassle-free experience for the employees.
+            adapt, leading to a smooth hassle-free experience for the employees.
           </p>
           <h3 style={styles.introHeaderssize4}>
             To view the site click the 'Inventory' button in the top left!

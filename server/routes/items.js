@@ -35,9 +35,9 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   console.log("test");
   try {
-    const { name, price, description, category, image } = req.body;
+    const { name, price, description, category, stock, image } = req.body;
 
-    if (!name || !price || !description || !category || !image) {
+    if (!name || !price || !description || !category || !stock || !image) {
       return res.status(400).json({ error: "All fields required" });
     }
 
@@ -46,6 +46,7 @@ router.post("/", async (req, res) => {
       price,
       description,
       category,
+      stock,
       image,
     });
 
@@ -85,7 +86,7 @@ router.delete("/:id", async (req, res) => {
 router.patch("/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const { name, price, description, category, image } = req.body;
+    const { name, price, description, category, stock, image } = req.body;
 
     const itemToUpdate = await Item.findByPk(id);
     if (!itemToUpdate) {
@@ -97,6 +98,7 @@ router.patch("/:id", async (req, res) => {
       price: price ?? itemToUpdate.price,
       description: description ?? itemToUpdate.description,
       category: category ?? itemToUpdate.category,
+      stock: stock?? itemToUpdate.stock,
       image: image ?? itemToUpdate.image,
     });
 

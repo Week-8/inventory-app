@@ -18,8 +18,9 @@ export default function ItemCard({ item }) {
           <h3 className="font-bold txt-xl">{item.name}</h3>
           <p className="text-gray-600">{item.category}</p>
           <p className="font-semibold text-blue-800">
-            ${item.price.toFixed(2)}
+            £{item.price.toFixed(2)}
           </p>
+          <p className="font-semibold text-gray-600 ml-auto">Stock:{item.stock}</p>
         </div>
       </Link>
     </>

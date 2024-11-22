@@ -8,6 +8,7 @@ export default function AddItem() {
     description: "",
     price: "",
     category: "",
+    stock: "",
     image: "",
   });
 
@@ -55,7 +56,7 @@ export default function AddItem() {
             Name
           </label>
           <input
-            className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-80  rounded-md focus:ring-2 outline-none py-2 px-1"
+            className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-800  rounded-md focus:ring-2 outline-none py-2 px-1"
             autoComplete="off"
             type="text"
             id="name"
@@ -115,6 +116,23 @@ export default function AddItem() {
             value={item.category}
             onChange={handleChange}
             required
+          />
+        </div>
+        <div>
+          <label
+             htmlFor="stock"
+             className="block text-sm font-medium text-gray-700 mb-1"
+           >
+             Stock
+           </label>
+            <input
+             className="w-full border-2 focus:ring focus:ring-offset-1 focus:ring-slate-800	 rounded-md focus:ring-2 outline-none py-2 px-1"
+             type="number"
+             id="stock"
+             name="stock"
+             value={item.stock}
+             onChange={handleChange}
+             required
           />
         </div>
         <div>

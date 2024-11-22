@@ -9,6 +9,7 @@ Item.init(
     description: DataTypes.STRING,
     price: DataTypes.FLOAT,
     category: DataTypes.STRING,
+    stock: DataTypes.INTEGER,
     image: DataTypes.STRING,
   },
   {
