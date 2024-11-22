@@ -20,12 +20,12 @@ export default function NavBar({ option }) {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
-    navigate("/login");
+    navigate("/auth/login");
   };
 
   return (
     <div className="flex w-full justify-between items-center">
-      <Link to={"/"}></Link>
+      <Link to={"/home"}></Link>
       {option === "home" && (
         <div className="flex">
           <Link

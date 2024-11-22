@@ -15,6 +15,7 @@ import GridItemView from "./components/GridItemView";
 import RegisterPage from "./components/Register";
 import LoginPage from "./components/LoginPage";
 import Home from "./components/Home";
+import CartPage from "./components/CartPage";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/items/add",
     element: <AddItem />,
+  },
+  {
+    path: "/items/cart",
+    element: <CartPage />,
   },
   {
     path: "/auth/register",
